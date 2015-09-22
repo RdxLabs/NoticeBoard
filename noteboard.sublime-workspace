@@ -520,10 +520,10 @@
 	"buffers":
 	[
 		{
-			"file": "imghost/templates/mainpage.html",
+			"file": "noteboard.sublime-project",
 			"settings":
 			{
-				"buffer_size": 621,
+				"buffer_size": 45,
 				"line_ending": "Unix"
 			}
 		}
@@ -577,11 +577,8 @@
 	},
 	"expanded_folders":
 	[
-		"/home/sharat910/django/noteboard",
-		"/home/sharat910/django/noteboard/imghost",
-		"/home/sharat910/django/noteboard/imghost/templates",
-		"/home/sharat910/django/noteboard/media",
-		"/home/sharat910/django/noteboard/noteboard"
+		"/home/coolhritik1/virtual/django-content/1.8.4/noteboard",
+		"/home/coolhritik1/virtual/django-content/1.8.4/noteboard/media"
 	],
 	"file_history":
 	[
@@ -716,7 +713,7 @@
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 25.0
 	},
 	"find_in_files":
 	{
@@ -892,26 +889,24 @@
 			[
 				{
 					"buffer": 0,
-					"file": "imghost/templates/mainpage.html",
+					"file": "noteboard.sublime-project",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 621,
+						"buffer_size": 45,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								604,
-								604
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -925,7 +920,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 25.0
 	},
 	"input":
 	{
@@ -966,7 +961,7 @@
 	"project": "noteboard.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 46.0
 	},
 	"save_all_on_build": true,
 	"select_file":

@@ -1,0 +1,50 @@
+body{
+background-color:#CCCCCC;
+background-size: 100% 100%;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+#footer-container{
+	height: 100px;
+}
+#container{
+background-image: url('/media/bg/striped-lens.png');
+width:1000px;
+margin-top:2%;
+margin-left:1%;
+margin-right:auto;
+border-radius: 10px 10px 10px 10px;
+-moz-box-shadow:    6px 6px 5px 3px #888;
+-webkit-box-shadow: 6px 6px 5px 3px #888;
+box-shadow:         6px 6px 5px 3px #888;
+}
+#inner-container{
+
+}
+#inner-container ul{
+	list-style-type: none;
+}
+#inner-container li{
+}
+.notice{
+/*border:1px solid black;*/
+width:90%;
+border-radius: 25px;
+height:400px;
+}
+.thumb-container{
+/*border:1px solid black;*/
+overflow: hidden;
+width:560;
+height:315;
+}
+.thumb-container img{
+float:left;
+height:95%;
+width: auto;
+margin:auto;
+border-radius: 10px 10px 10px 10px;
+-moz-box-shadow:    6px 6px 5px 0px #888;
+-webkit-box-shadow: 6px 6px 5px 0px #888;
+box-shadow:         6px 6px 5px 0px #888;
+}

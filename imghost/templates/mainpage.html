@@ -1,46 +1,35 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'imghost/style.css' %}" />
 <html>
 <head>
 <meta charset="utf-8">
 <title>{% block title %}NoticeBoard{% endblock %}</title>
-<style>
-body{
-background-image: url("media/bg/bg.jpg");
-background-size: 100% 100%;
-background-repeat: no-repeat;
-background-attachment: fixed;
-}
-img{
-border-radius: 10px 10px 10px 10px;
--moz-box-shadow:    0px 0px 5px 0px #888;
--webkit-box-shadow: 0px 0px 5px 0px #888;
-box-shadow:         0px 0px 5px 0px #888;
-}
-h1{
-font-family:sans;
-color:darkgreen;
-}
-</style>
 </head>
 <body>
 {% block images %}
-<div style="margin-top:50px;text-align:left;">
-<header style="margin-left:50px;"><h1>Notices</h1></header>
+<div id="container">
+<div id="inner-container">
+<div id="footer-container"><footer></footer></div>
 {% if images %}
     <ul>
-        {% for image in images %} 
-        	<div style="width:400px;height:300px;overflow:hidden;" >
-        	<li><a href="{{ image.image.url }}">
-            <img src="{{ image.image.url }}" alt="{{ image..name }}" style="max-width:100%; max-height:100%;margin:auto; display:block;">
-            </a></li>
-            </div>
+        {% for image in images %}
+	<div class="notice">
+    <div class="thumb-container"> 
+        <li><a href="{{ image.image.url }}">
+            <img src="{{ image.image.url }}">
+            </a>
+        </li>
+    </div>
+	</div>
         {% endfor %}
-	</ul>
+    </ul>
 {% else %}
     <p>No documents.</p>
 {% endif %}
-<footer></footer>
+</div>
 </div>
 {% endblock %}
+
 </body>
 
 </html>
