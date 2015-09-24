@@ -10,6 +10,18 @@
 <div id="container">
 <div id="inner-container">
 <div id="footer-container"><footer></footer></div>
+<div id="sort-bar-container">
+<div id="sort-form-container">
+<form id="sort-bar">
+    <button type="submit" name="sort" value="name">Name</button>
+    <button type="submit" name="sort" value="pb_date">Publish Date</button>
+    <button type="submit" name="sort" value="ev_date">Event Date</button>
+    <input type="hidden" name="datefilter" value="{{datefilter}}"></input>
+    <input type="hidden" name="prevsort" value="{{prevsort}}"></input>
+</form>
+</div>
+</div>
+<br>
 {% if images %}
     <ul>
         {% for image in images %}
@@ -27,13 +39,25 @@
     </div>
     <div class="notice-desc">
     <h4>{{image.description}}</h4>
-    </div>
 	</div>
+    </div>
         {% endfor %}
     </ul>
 {% else %}
     <p>No documents.</p>
 {% endif %}
+</div>
+</div>
+<div id="filters-container">
+<form>
+<form id="sort-bar">
+    <button type="submit" name="datefilter" value="today">Today</button>
+    <button type="submit" name="datefilter" value="thisweek">This Week</button>
+    <button type="submit" name="datefilter" value="thismonth">This Month</button>
+    <button type="submit" name="datefilter" value="all">Show All</button>
+    <input type="hidden" name="sort" value="{{sorttype}}"></input>
+</form>
+</form>
 </div>
 </div>
 {% endblock %}

@@ -4,12 +4,16 @@ background-size: 100% 100%;
 background-repeat: no-repeat;
 background-attachment: fixed;
 }
+div{
+	overflow: hidden;
+}
 #footer-container{
-	height: 100px;
+	height: 50px;
 }
 #container{
 background-image: url('/media/bg/striped-lens.png');
 width:80%;
+float: left;
 margin-top:2%;
 margin-left:1%;
 margin-right:auto;
@@ -26,18 +30,28 @@ box-shadow:         6px 6px 5px 3px #888;
 }
 #inner-container li{
 }
+#sort-bar-container{
+	background-color: #CCCCCC;
+	width:80%;
+	margin: 0 auto;
+	border-radius: 2px 2px 2px 2px;
+	-moz-box-shadow:    6px 6px 5px 3px #888;
+	-webkit-box-shadow: 6px 6px 5px 3px #888;
+	box-shadow:         6px 6px 5px 3px #888;
+}
 .notice{
 /*border:1px solid black;*/
 width:90%;
+height: 50%;
 border-radius: 25px;
-height:400px;
+margin-top: 2%;
 }
 .thumb-container{
 /*border:1px solid black;*/
 float:left;
 overflow: hidden;
-width:560;
-height:315;
+width:50%;
+height:70%;
 }
 .thumb-container img{
 height:95%;
@@ -53,9 +67,35 @@ box-shadow:         6px 6px 5px 0px #888;
 	font-family: sans, "Helvetica";
 	color: rgb(100,100,100);
 	float:right;
-	width:33%;
-	height:315;
+	width:40%;
+	height: 70%;
+	/*height:315;*/
 }
 .notice-desc{
-	font-family: sans;
+	width:100%;
+	float: right;
+	font-family: serif;
+}
+#filters-container{
+background-color: #CCCCCC;
+width:15%;
+height:50%;
+margin-top:2%;
+float:right;
+margin-right:2%;
+border-color:#FFFFFF;
+border-radius: 10px 10px 10px 10px;
+-moz-box-shadow:    0px 0px 5px 3px #888;
+-webkit-box-shadow: 0px 0px 5px 3px #888;
+box-shadow:         0px 0px 5px 3px #888;
+}
+#filters-form{
+	width: 60%;
+	height: 80%;
+	background-color:#CCCCCC;
+	margin: 10% auto;
+	border-radius: 2px 2px 2px 2px;
+	-moz-box-shadow:    6px 6px 5px 3px #888;
+	-webkit-box-shadow: 6px 6px 5px 3px #888;
+	box-shadow:         6px 6px 5px 3px #888;*/
 }

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from django.core.urlresolvers import reverse
 
 from .models import Image
@@ -10,8 +11,43 @@ from .forms import ImageUploadForm
 
 # Create your views here.
 def MainPage(request):
-	images = Image.objects.all()
-	context = {'images': images}
+	filteredimages = []
+	sorttype = request.GET.get('sort',"")
+	prevsort = request.GET.get('prevsort',"")
+	datefilter = request.GET.get('datefilter', "")
+	#response = HttpResponse();
+	#response.write("Testing Again ")
+	if(sorttype and datefilter and prevsort):
+	  pass
+	else:
+	  sorttype='ev_date'
+	  datefilter='all'
+	  prevsort='temp'
+	if(sorttype=='name'):
+	  if(prevsort=='name'):
+	    images = sorted(Image.objects.all(), key=lambda image: image.name.lower(), reverse=True)
+	    prevsort = "temp"
+	  else:
+	  	images = sorted(Image.objects.all(), key=lambda image: image.name.lower())
+	  	prevsort = 'name'
+	elif(sorttype=='pb_date'):
+	  if(prevsort=='pb_date'):
+	    images = sorted(Image.objects.all(), key=lambda image: image.date_published)
+	    prevsort = "temp"
+	  else:
+	  	images = sorted(Image.objects.all(), key=lambda image: image.date_published, reverse=True)
+	  	prevsort ='pb_date'
+	elif(sorttype=='ev_date'):
+	  if(prevsort=='ev_date'):
+	    images = sorted(Image.objects.all(), key=lambda image: image.date_event)
+	    prevsort = "temp"
+	  else:
+	  	images = sorted(Image.objects.all(), key=lambda image: image.date_event, reverse=True)
+	  	prevsort = 'ev_date'
+	else: images = Image.objects.all()
+
+	context = {'images': images, 'sorttype':sorttype,'datefilter':datefilter, 'prevsort':prevsort}
+	#return response
 	return render_to_response('mainpage.html',context,context_instance = RequestContext(request))
 
 def UploadPage(request):
