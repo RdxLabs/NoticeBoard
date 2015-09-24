@@ -9,7 +9,7 @@ background-attachment: fixed;
 }
 #container{
 background-image: url('/media/bg/striped-lens.png');
-width:1000px;
+width:80%;
 margin-top:2%;
 margin-left:1%;
 margin-right:auto;
@@ -34,12 +34,12 @@ height:400px;
 }
 .thumb-container{
 /*border:1px solid black;*/
+float:left;
 overflow: hidden;
 width:560;
 height:315;
 }
 .thumb-container img{
-float:left;
 height:95%;
 width: auto;
 margin:auto;
@@ -47,4 +47,15 @@ border-radius: 10px 10px 10px 10px;
 -moz-box-shadow:    6px 6px 5px 0px #888;
 -webkit-box-shadow: 6px 6px 5px 0px #888;
 box-shadow:         6px 6px 5px 0px #888;
+}
+.notice-info{
+	/*border:1px solid black;*/
+	font-family: sans, "Helvetica";
+	color: rgb(100,100,100);
+	float:right;
+	width:33%;
+	height:315;
+}
+.notice-desc{
+	font-family: sans;
 }
