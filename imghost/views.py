@@ -1,3 +1,4 @@
+import datetime
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -17,7 +18,7 @@ def MainPage(request):
 	datefilter = request.GET.get('datefilter', "")
 	#response = HttpResponse();
 	#response.write("Testing Again ")
-	if(sorttype and datefilter and prevsort):
+	if(sorttype and datefilter):
 	  pass
 	else:
 	  sorttype='ev_date'
@@ -45,8 +46,24 @@ def MainPage(request):
 	  	images = sorted(Image.objects.all(), key=lambda image: image.date_event, reverse=True)
 	  	prevsort = 'ev_date'
 	else: images = Image.objects.all()
+	datetoday = datetime.datetime.today().date()
+	if(datefilter=='all'):
+		filteredimages = images
+	else:
+		if(datefilter=="today"):
+			for i in images:
+				if(i.date_published.date()==datetoday):
+					filteredimages+=[i]
+		elif(datefilter=="thisweek" or datefilter=="thismonth"):
+			if(datefilter=="thisweek"): timedelta = datetime.timedelta(days=7)
+			else: timedelta = datetime.timedelta(days=30)
+			for i in images:
+				if(datetoday-i.date_published.date()<timedelta):
+					filteredimages+=[i]
+		else: filteredimages = images 
+		#if(datefilter=='')
 
-	context = {'images': images, 'sorttype':sorttype,'datefilter':datefilter, 'prevsort':prevsort}
+	context = {'images': filteredimages, 'sorttype':sorttype,'datefilter':datefilter, 'prevsort':prevsort}
 	#return response
 	return render_to_response('mainpage.html',context,context_instance = RequestContext(request))
 
